@@ -1,0 +1,18 @@
+{% extends "apploader/header.html" %}
+
+{% block content %}
+
+
+<center>
+    <br />
+    <br />  
+    <p> Cria uma imagem </p>
+    <br />
+    <form action="/mostra_imagem/" method="post">{% csrf_token %}
+        <div class="button">
+            <button type="submit"> Criar. </button>
+        </div>
+    </form>
+</center>
+
+{% endblock %}
