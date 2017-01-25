@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apploader',
+#    'apploader', # It gives an error, why?
+    'apploader.apps.ApploaderConfig',
 ]
 
 MIDDLEWARE = [

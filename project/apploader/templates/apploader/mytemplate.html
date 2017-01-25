@@ -4,14 +4,15 @@
 
 <h2> Meu template ... </h2>
 
+{% for plot in all_plots %}
+		<center>
+			<img src="{{ plot.url }}">
+		</center><br>
+{% endfor %}
 
-
-<center>
-	<img src="{{ MEDIA_URL }}imagemMedia.png" alt="My image"/>
-</center>
 
 {{ MEDIA_URL }}
-
+{{ MEDIA_ROOT }}
 
 {% endblock %}
 

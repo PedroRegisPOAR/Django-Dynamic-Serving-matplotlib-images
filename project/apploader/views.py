@@ -1,6 +1,7 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 from apploader.cria_imagens.cria_imagens import criaImagem
+from . models import Plot
 
 # Create your views here.
 
@@ -10,15 +11,29 @@ def index(request):
 
 
 def mostra_imagem(request):
-	image_name = 'imagemTeste.png'
-	path = 'apploader/static/cria_imagens/'
+	all_plots = Plot.objects.all()
+	context = {'all_plots':all_plots}
 	
-	criaImagem(path, image_name)
+#	criaImagem()
 
-#	return render(request, 'apploader/mytemplate.html')
-	path_page = 'apploader/mytemplate.html'
-	path_imagem = path + image_name
-	return render(request, path_page)#, {"imagem":path_imagem})
+	return render(request, 'apploader/mytemplate.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -31,12 +46,6 @@ def mostra_imagem(request):
     path_page = 'project/projeção_populacional/results_projeção_populacional.html'
     return render(request, path_page, {"imagem":path_imagem})
 """
-
-
-
-
-
-
 
 
 
